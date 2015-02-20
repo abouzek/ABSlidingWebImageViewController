@@ -28,6 +28,7 @@ An instance of ABSegmentedViewController should be created using the designated 
 
 * The instance should be added as a child view controller and the frame should be manually set. The view is intended to be constrained to a single line. The item size can be changed with the ABSegmentedViewController selector:
 
+
 	-(void)setItemSize:(CGSize)itemSize;
 
 ## Installation
