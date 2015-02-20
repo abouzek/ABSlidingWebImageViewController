@@ -18,10 +18,9 @@
     NSString *fullUrl = @"http://placehold.it/1100x1100";
     NSArray *thumbnailUrls = @[thumbnailUrl, thumbnailUrl, thumbnailUrl, thumbnailUrl, thumbnailUrl, thumbnailUrl, thumbnailUrl, thumbnailUrl, thumbnailUrl, thumbnailUrl];
     NSArray *fullUrls = @[fullUrl, fullUrl, fullUrl, fullUrl, fullUrl, fullUrl, fullUrl, fullUrl, fullUrl, fullUrl];
-    ABSlidingWebImageViewController *slidingImageViewController = [[ABSlidingWebImageViewController alloc] initWithDelegate:nil
-                                                                                                         thumbnailImageUrls:thumbnailUrls
-                                                                                                              fullImageUrls:fullUrls
-                                                                                                               showGradient:YES];
+    ABSlidingWebImageViewController *slidingImageViewController = [[ABSlidingWebImageViewController alloc] initWithThumbnailImageUrls:thumbnailUrls
+                                                                                                                        fullImageUrls:fullUrls
+                                                                                                                         showGradient:YES];
     [self addChildViewController:slidingImageViewController];
     [self.view addSubview:slidingImageViewController.view];
     slidingImageViewController.view.frame = CGRectMake(0, 50, [UIScreen mainScreen].bounds.size.width, 80);

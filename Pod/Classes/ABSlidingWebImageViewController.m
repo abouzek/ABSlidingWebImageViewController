@@ -9,9 +9,8 @@
 #import "ABSlidingWebImageViewCell.h"
 #import <ASMediaFocusManager.h>
 
-@interface ABSlidingWebImageViewController () <UICollectionViewDelegate, UICollectionViewDataSource, ASMediasFocusDelegate>
+@interface ABSlidingWebImageViewController () <UICollectionViewDataSource, ASMediasFocusDelegate>
 
-@property (weak, nonatomic) id<ABSlidingWebImageViewControllerDelegate> delegate;
 @property (nonatomic) BOOL showGradient;
 @property (strong, nonatomic) NSArray *thumbnailImageUrls, *fullImageUrls, *imageViews;
 @property (strong, nonatomic) ASMediaFocusManager *mediaFocusManager;
@@ -26,12 +25,10 @@
 
 @implementation ABSlidingWebImageViewController
 
--(instancetype)initWithDelegate:(id<ABSlidingWebImageViewControllerDelegate>)delegate
-             thumbnailImageUrls:(NSArray *)thumbnailImageUrls
-                  fullImageUrls:(NSArray *)fullImageUrls
-                   showGradient:(BOOL)showGradient {
+-(instancetype)initWithThumbnailImageUrls:(NSArray *)thumbnailImageUrls
+                            fullImageUrls:(NSArray *)fullImageUrls
+                             showGradient:(BOOL)showGradient {
     if (self = [super initWithNibName:nil bundle:nil]) {
-        self.delegate = delegate;
         self.thumbnailImageUrls = thumbnailImageUrls;
         self.fullImageUrls = fullImageUrls;
         self.showGradient = showGradient;
@@ -124,14 +121,6 @@
 {
     return nil;
 }
-
-
-#pragma mark - UICollectionViewDelegate
-
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [self.delegate slidingWebImageViewController:self didSelectRow:indexPath.row];
-}
-
 
 #pragma mark - UICollectionViewDataSource
 

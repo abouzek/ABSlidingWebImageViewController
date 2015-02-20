@@ -1,15 +1,30 @@
 # ABSlidingWebImageViewController
 
-[![CI Status](http://img.shields.io/travis/abouzek/ABSlidingWebImageViewController.svg?style=flat)](https://travis-ci.org/abouzek/ABSlidingWebImageViewController)
 [![Version](https://img.shields.io/cocoapods/v/ABSlidingWebImageViewController.svg?style=flat)](http://cocoadocs.org/docsets/ABSlidingWebImageViewController)
 [![License](https://img.shields.io/cocoapods/l/ABSlidingWebImageViewController.svg?style=flat)](http://cocoadocs.org/docsets/ABSlidingWebImageViewController)
 [![Platform](https://img.shields.io/cocoapods/p/ABSlidingWebImageViewController.svg?style=flat)](http://cocoadocs.org/docsets/ABSlidingWebImageViewController)
+
+## Description
+
+A scrolling image collection view with asynchronous photo loading and single image focusing built in. Meant to be used with an item size and height to constrain the collection view to a single line. It leverages SDWebImage and ASMediaFocusManager.
+
+## Example
+
+![alt tag](https://www.github.com/abouzek/ABSlidingWebImageViewController/raw/master/example.gif)
 
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+An instance of ABSegmentedViewController should be created using the designated initializer:
+
+	-(instancetype)initWithThumbnailImageUrls:(NSArray *)thumbnailImageUrls
+                                fullImageUrls:(NSArray *)fullImageUrls
+                                 showGradient:(BOOL)showGradient;
+                 
+* The thumbnailImageUrls and fullImageUrls arrays should contain URLs in the form of NSStrings pointing to the images to be loaded in the collection view. They should have the same size. If no fullImageUrls exist, the thumbnailImageUrls will be used to load the full size images.
+
+* The showGradient BOOL determines whether a white gradient on the left and right of the collection view will be shown.
 
 ## Installation
 
@@ -20,9 +35,9 @@ it, simply add the following line to your Podfile:
 
 ## Author
 
-abouzek, alan.bouzek@gmail.com
+Alan Bouzek, github: abouzek, alan.bouzek@gmail.com.
+Credit to SDWebImage and ASMediaFocusManager, as this pod depends on them for core functionality.
 
 ## License
 
 ABSlidingWebImageViewController is available under the MIT license. See the LICENSE file for more info.
-
