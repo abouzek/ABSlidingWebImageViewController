@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "ABSlidingWebImageViewController"
-  s.version          = "0.1.0"
+  s.version          = "0.2.0"
   s.summary          = "A scrolling image collection view with asynchronous photo loading and single image focusing built in."
   s.description      = "A scrolling image collection view with asynchronous photo loading and single image focusing built in. Meant to be used with an item size and height to constrain the collection view to a single line"
   s.homepage         = "https://github.com/abouzek/ABSlidingWebImageViewController"
