@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'ABSlidingWebImageViewController', :exclusive => true do
+  pod "ABSlidingWebImageViewController", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "ABSlidingWebImageViewController", :path => "../"
+
+  
+end
